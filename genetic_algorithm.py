@@ -6,15 +6,6 @@ def cross_over(parent_A, parent_B):
     
     return child
 
-def fitness(individual):
-    count_ones = 0
-    for i in range(0, len(individual) - 1 + 1, 1):
-        if individual[i] == "1":
-            count_ones += 1
-    fitness = float(countOfOnes) / len(individual)
-    
-    return fitness
-
 def mutate(individual):
     if int(random.random() * 2) == 0:
         pass
@@ -34,6 +25,15 @@ def print_array(array):
         return_string = return_string + array[i] + "    "
     
     return return_string
+
+def fitness(individual):
+    count_ones = 0
+    for i in range(0, len(individual) - 1 + 1, 1):
+        if individual[i] == "1":
+            count_ones += 1
+    fitness = float(countOfOnes) / len(individual)
+    
+    return fitness
 
 def substring(s, start, end):
     substring = ""
